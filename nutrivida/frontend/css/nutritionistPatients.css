@@ -1,0 +1,384 @@
+body .container {
+    display: block !important;      
+    max-width: 1200px !important;   
+    margin: 2rem auto !important;   
+    padding: 0 20px !important;
+}
+
+
+.content {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.search-container {
+    width: 100% !important;
+    display: flex;
+}
+
+.patients-table td:last-child,
+td.btn-container {
+    display: flex !important;
+    justify-content: flex-end !important; 
+    align-items: center !important;
+    gap: 10px !important;
+    padding-right: 0 !important; 
+}
+
+.msg-loading {
+    text-align: center;
+    padding: 1.25rem; 
+    font-style: italic;
+    color: #555;
+}
+
+.msg-error {
+    text-align: center;
+    color: #dc3545; 
+    padding: 1.25rem;
+    font-weight: bold;
+}
+
+.msg-empty {
+    text-align: center;
+    padding: 1.25rem;
+    color: #6c757d; 
+    font-style: italic;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.625rem; 
+    margin-bottom: 1.25rem; 
+    background-color: #fff;
+    padding: 0.9375rem; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.05); 
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.625rem 0.9375rem;
+    border: 0.0625rem solid #ced4da; 
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.search-input:focus {
+    border-color: #80bdff;
+    outline: 0;
+}
+
+.btn-search {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.5625rem; 
+    border-radius: 0.25rem; 
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+    background-color: #218838;
+}
+
+.btn-clear {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.25rem; 
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-clear:hover {
+    background-color: #5a6268;
+}
+
+/* Tabela de Pacientes */
+.table-container {
+    background-color: #fff;
+    border-radius: 0.5rem; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.05); 
+}
+
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patients-table th, 
+.patients-table td {
+    padding: 0.9375rem;
+    text-align: left;
+    border-bottom: 0.0625rem solid #e9ecef; 
+}
+
+.patients-table th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.patients-table tr:hover {
+    background-color: #f1f3f5;
+}
+
+.patients-table tr:last-child td {
+    border-bottom: none;
+}
+
+.btn-container {
+    display: flex;
+    gap: 0.3125rem;
+    justify-content: flex-end;
+}
+
+
+/* Última coluna (Ações): Alinhar à direita */
+.patients-table th:last-child, 
+.patients-table td:last-child {
+   width: auto !important; 
+    min-width: 200px; 
+    text-align: right !important; 
+}
+
+/* Primeira coluna (Nome): Ocupar espaço */
+.patients-table th:first-child, 
+.patients-table td:first-child {
+    width: auto;
+}
+
+
+/* Botões de Ação na Tabela */
+.action-btn {
+    padding: 0.375rem 0.75rem; 
+    margin-right: 0.3125rem; 
+    border: none;
+    border-radius: 0.25rem; 
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+.btn-view {
+   background-color: #177db8;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+/* Header com botão voltar */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem; 
+}
+
+.btn-back {
+    background: none;
+    border: 0.0625rem solid rgba(255,255,255,0.5); 
+    color: white;
+    padding: 0.3125rem 0.625rem; 
+    border-radius: 0.25rem; 
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-back:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+#patient_details {
+    display: none;
+    width: 100%;
+}
+
+
+.msg-loading {
+    text-align: center;
+    padding: 1.25rem; 
+}
+
+.msg-error {
+    text-align: center;
+    color: red;
+    padding: 1.25rem;
+}
+
+.msg-empty {
+    text-align: center;
+    padding: 1.25rem; 
+    color: #666;
+}
+
+
+@media (max-width: 600px) {
+    
+
+   .container {
+    display: block !important;
+    max-width: 100% !important;
+    grid-template-columns: none !important;
+    padding: 1.25rem;
+}
+}
+
+
+@media (max-width: 30rem) {
+    
+   .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-input, .btn-search, .btn-clear {
+        width: 100%;
+        margin-bottom: 0.3125rem;
+    }
+
+    /* --- TABELA VIRA LISTA DE CARDS --- */
+    
+    .patients-table thead {
+        display: none;
+    }
+
+    .patients-table tr {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        margin-bottom: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);      
+        text-align: left !important;
+        align-items: flex-start !important; 
+    }
+
+    .patients-table td {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        border: none;
+        text-align: left;
+    }
+
+    /* Título do Card (Primeira coluna - Nome) */
+    .patients-table td:first-child {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 10px;
+    }
+
+    /* Coluna de Ações (Botões) */
+    .patients-table td:last-child {
+        margin-top: 10px;
+        border-top: 1px solid #f0f0f0;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;    
+        gap: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .patients-table .action-btn {
+        width: auto;        
+        min-width: 80px;     
+        margin: 0;
+        padding: 0.5rem 1rem;
+        text-align: center;
+    }
+}
+
+
+/* --- Estilos da Lista de Dietas na Sidebar --- */
+
+.sidebar-diet-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-diet-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.status-badge-small {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.status-active { 
+    background-color: #d4edda; color: #155724; 
+}
+.status-finalized {
+     background-color: #c3e6cb; color: #155724;
+     }
+.status-cancelled { 
+    background-color: #f8d7da; color: #721c24;
+ }
+
+.btn-view-diet-sidebar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition:  0.2s;
+    text-align: center;
+    width: auto;
+    align-self: flex-start;
+}
+
+.btn-view-diet-sidebar:hover {
+    background-color: #0056b3;
+}
+
+.loading-text {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 10px;
+}

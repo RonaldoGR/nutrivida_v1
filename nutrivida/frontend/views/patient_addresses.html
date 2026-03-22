@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Endereços - NutriVida</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/meal.css"> 
+    <link rel="stylesheet" href="../css/patientDetails.css">
+    <link rel="stylesheet" href="../css/address.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>NutriVida | Endereços</h2>
+        <div class="nav-right-container">
+            <a href="patient_dashboard.html" class="nav-link-profile">Início</a>
+            <a href="patient_addresses.html" class="nav-link-profile nav-active">Meus Endereços</a>
+            <a href="patient_details.html" class="nav-link-profile">Meu Perfil</a>
+            <a href="patient_password.html" class="nav-link-profile">Redefinir Senha</a>
+            <button class="btn-logout" id="btnLogout">Sair</button>
+        </div>
+    </nav>
+
+    <div class="details-page-container">
+        
+        <div id="address-list-section" class="meal-form profile-card">
+            <div class="meal-header">
+                <h3>Endereços Cadastrados</h3>
+                <button id="btn-new-address" class="btn-add">+ Novo Endereço</button>
+            </div>
+            <hr class="section-divider">
+            
+            <div id="addresses-container">
+                <p class="text-center text-muted">Carregando endereços...</p>
+            </div>
+        </div>
+
+        <div id="address-form-section" class="meal-form profile-card hidden">
+            <div class="meal-header">
+                <h3 id="form-title">Editar Endereço</h3>
+                <button id="btn-cancel-address" class="btn-edit-mode btn-cancel-mode">Cancelar</button>
+            </div>
+            <hr class="section-divider">
+
+            <form id="address-form">
+                <input type="hidden" id="addr-id">
+                
+                <div class="form-grid-row">
+                    <div class="form-group">
+                        <label>CEP:</label>
+                        <input type="text" id="addr-cep" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>País:</label>
+                        <input type="text" id="addr-country" class="form-control" value="Brasil">
+                    </div>
+                </div>
+
+                <div class="form-grid-row">
+                    <div class="form-group">
+                        <label>Rua:</label>
+                        <input type="text" id="addr-street" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Número:</label>
+                        <input type="text" id="addr-number" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-grid-row">
+                    <div class="form-group">
+                        <label>Bairro:</label>
+                        <input type="text" id="addr-neighborhood" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cidade:</label>
+                        <input type="text" id="addr-city" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Estado (UF):</label>
+                    <input type="text" id="addr-state" class="form-control" maxlength="2" required>
+                </div>
+
+                <div class="save-area">
+                    <button type="submit" class="btn-save-meal">Salvar Endereço</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script type="module" src="../js/patientAddresses.js"></script>
+</body>
+</html>

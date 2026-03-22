@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="card">
+    <h2 id="loginTitle">Login </h2>
+    
+    <div class="toggle-type">
+        <button onclick="setLoginType('patient')" id="btnPatient" class="active">Sou Paciente</button>
+        <button onclick="setLoginType('nutritionist')" id="btnNutri">Sou Nutricionista</button>
+    </div>
+
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="E-mail" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+    
+    <p id="msg"></p>
+    
+    <hr>
+    <p style="text-align: center; font-size: 0.9rem;">
+        Não tem conta? <br>
+        <a href="patient_registration.html">Cadastrar Paciente</a> | 
+        <a href="nutritionist_registration.html">Cadastrar Nutricionista</a>
+    </p>
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

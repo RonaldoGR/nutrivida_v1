@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Área - Paciente</title>
+</head>
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/meal.css">
+<link rel="stylesheet" href="../css/dietDetail.css">
+<body>
+
+        <nav class="navbar">
+            <h2>NutriVida | Área do Paciente</h2>
+            
+            <div class="nav-right-container">
+                <a href="patient_details.html" class="nav-link-profile">Meu Perfil</a>
+                <a href="patient_addresses.html" class="nav-link-profile">Meus Endereços</a>
+                <a href="patient_password.html" class="nav-link-profile">Redefinir Senha</a>
+                
+                <span id="headerName">Carregando...</span>
+                <button class="btn-logout" onclick="logout()">Sair</button>
+            </div>
+        </nav>
+
+   <div class="container">
+        
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Resumo do Perfil</h3>
+                
+                <div id="profileLoading">Carregando dados...</div>
+
+                <div id="profileData" class="sidebar-profile-box hidden">
+                    <img id="pFoto" src="" alt="Foto de Perfil" class="sidebar-profile-img">
+                    <p id="pName" class="sidebar-text"></p>
+                    <p id="pEmail" class="sidebar-text-secondary"></p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="card">
+                <h3>Minhas Dietas Ativas</h3>
+               <div class="filter-buttons" id="diet-filters">
+                    <button class="btn-view status-filter-active" data-status="ativa" onclick="loadDiets('ativa', this)">Ativas</button>
+                    <button class="btn-view" data-status="todas" onclick="loadDiets('todas', this)">Todas Dietas</button>
+                    <button class="btn-view" data-status="finalizada" onclick="loadDiets('finalizada', this)">Finalizadas</button>
+                    <button class="btn-view" data-status="cancelada" onclick="loadDiets('cancelada', this)">Canceladas</button>
+                </div>
+
+                <div id="dietList">
+  
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="../js/patientDashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Pacientes - NutriVida</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/nutritionistPatients.css">
+</head>
+<body>
+
+    <nav class="navbar" style="background-color: #0056b3;">
+        <div class="header-actions">
+            <a href="nutritionist_dashboard.html" class="btn-back">⬅ Voltar</a>
+            <h2>Gerenciar Pacientes</h2>
+        </div>
+        <button class="btn-logout" id="btnLogout">Sair</button>
+    </nav>
+    
+    <div class="container">
+        <main class="content" > 
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar paciente por nome...">
+                <button onclick="searchPatients()" class="btn-search">Buscar</button>
+                <button onclick="loadPatients()" class="btn-clear">Limpar</button>
+            </div>
+            
+
+            <div class="table-container">
+                <table class="patients-table" id="patientsTable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                            <th style="width: 180px;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsList">
+                        <tr>
+                            <td colspan="4" style="text-align:center; padding: 20px; color: #666;">
+                                Carregando dados...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+        <aside id="patient_details" >
+            <h3 id="patient_name"></h3>
+            <p> <img id="pFoto" src="" alt="Foto de Perfil" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;"></p>
+             <p><strong>Nome:</strong> <span id="pName"></span></p>
+             <p><strong>Email:</strong> <span id="pEmail"></span></p>
+             <p><strong>CPF:</strong> <span id="pCpf"></span></p>
+             <hr style="margin: 10px 0;">
+             <p><strong>Endereços:</strong></p>
+             <p id="pAddress"></p>
+    
+             <main class="content">
+                <div class="card">
+                    <h3>Dietas</h3>
+                    <div id="dietList">
+                        <p></p>
+                    </div>
+                </div>
+            </main>
+    
+        </aside>
+    </div>
+
+    <script src="../js/nutritionistPatients.js"></script>
+</body>
+</html>

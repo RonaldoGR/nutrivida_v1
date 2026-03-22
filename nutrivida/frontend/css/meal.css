@@ -1,0 +1,370 @@
+/* --- Container & Header --- */
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9375rem; 
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 0.25rem; 
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* --- Form General Styles --- */
+.meal-form {
+    max-width: 50rem; 
+    margin: 1.25rem auto; 
+}
+
+.form-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9375rem;
+    margin-bottom: 0.9375rem; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem; 
+    margin-bottom: 0.9375rem; 
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.625rem; 
+    border: 0.0625rem solid #ced4da; 
+    border-radius: 0.25rem; 
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* --- Meal Items Cart (The "Carrinho") --- */
+.meal-cart-container {
+    background-color: #f8f9fa; 
+    padding: 1.25rem; 
+    border-radius: 0.5rem; 
+    border: 0.0625rem solid #dee2e6; 
+    margin-top: 0.625rem; 
+}
+
+.cart-header {
+    margin-top: 0;
+    margin-bottom: 0.9375rem; 
+    color: #495057;
+}
+
+.add-item-row {
+    display: flex;
+    gap: 0.625rem; 
+    align-items: flex-end;
+    margin-bottom: 0.9375rem; 
+}
+
+.item-select-wrapper {
+    flex-grow: 1;
+}
+
+.item-qty-wrapper {
+    width: 7.5rem; 
+}
+
+.btn-add-item {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.25rem; 
+    cursor: pointer;
+    font-weight: bold;
+    height: 2.625rem; 
+    transition: 0.2s;
+}
+
+.btn-add-item:hover {
+    background-color: #218838;
+}
+
+/* --- Items Table --- */
+.meal-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 0.25rem; 
+    overflow: hidden;
+}
+
+.meal-table th, .meal-table td {
+    padding: 0.75rem; 
+    border-bottom: 0.0625rem solid #dee2e6; 
+    text-align: left;
+}
+
+.meal-table th {
+    background-color: #e9ecef;
+    font-weight: 600;
+    color: #495057;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #6c757d;
+    padding: 1.25rem; 
+    font-style: italic;
+}
+
+.btn-remove-item {
+    color: #dc3545; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.3125rem; 
+    transition: color 0.2s;
+}
+
+.btn-remove-item:hover {
+    color: #a71d2a;
+}
+
+/* --- Save Button --- */
+.btn-save-meal {
+    width: 100%;
+    background-color: #007bff; 
+    color: white;
+    padding: 0.75rem; 
+    border: none;
+    border-radius: 0.25rem; 
+    margin-top: 1.25rem; 
+    font-size: 1rem; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-save-meal:hover {
+    background-color: #0056b3;
+}
+
+/* Botão Ver Detalhes */
+.btn-view {
+    background-color:#007bff ; 
+    color: white;
+    border: none;
+    padding: 0.3125rem 0.625rem; 
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0.625rem; 
+    transition: 0.2s;
+}
+
+.btn-view:hover {
+    background-color:#007bffc2 ;
+}
+
+
+.btn-edit, .btn-delete {
+    padding: 0.3125rem 0.625rem; 
+}
+
+
+
+.loading-detail-cell {
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.meal-details-container {
+    background-color: #f1f3f5;
+    padding: 1.25rem; 
+}
+
+.meal-details-flex {
+    display: flex;
+    gap: 1.25rem; 
+}
+
+.meal-details-img {
+    width: 6.25rem; 
+    height: 6.25rem; 
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.meal-details-content {
+    flex-grow: 1;
+}
+
+.meal-details-title {
+    margin: 0 0 0.625rem 0; 
+}
+
+.meal-details-empty {
+    color: #666;
+    font-style: italic;
+}
+
+.details-table {
+    width: 100%;
+    font-size: 0.9rem;
+    background: white;
+    border: 0.0625rem solid #eee; 
+}
+
+.details-table-head-row {
+    background: #eee;
+}
+
+.error-msg {
+    color: red;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+
+.btn-file-select {
+    background-color: #007bff; 
+    color: white;
+    padding: 0.4rem 1rem;     
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.2s;
+    text-align: center;
+    border: none;
+}
+
+.btn-file-select:hover {
+    background-color: #0056b3;
+}
+
+.file-name-display {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-left: 0.625rem; 
+}
+
+/* Container para alinhar botão e texto */
+.upload-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 0.3rem;
+}
+
+
+
+.meal-header.modal-header-fix {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+    max-width: 50rem; 
+    margin: 0 auto 0.9375rem auto;
+    margin-bottom: 0.9375rem;       
+    border-bottom: 0.0625rem solid #eee;
+    padding-bottom: 0.625rem;      
+}
+
+
+.meal-header.modal-header-fix h3 {
+    margin: 0;
+    text-align: center !important;
+}
+
+/* Ajuste do botão fechar */
+.meal-header.modal-header-fix .btn-delete {
+    margin: 0 !important;
+    padding: 0.3125rem 0.75rem !important; 
+    font-size: 1rem;
+    line-height: 1;
+    height: auto;
+}
+
+.meal-header.modal-header-fix .btn-delete {
+    margin: 0 !important;
+    padding: 0.3125rem 0.75rem !important;
+    font-size: 1rem;
+    line-height: 1;
+    height: auto;
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    /* grid de 2 colunas do formulário em 1 coluna */
+    .form-grid-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .meal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem; 
+    }
+
+    .add-item-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .item-qty-wrapper, .btn-add-item {
+        width: 100%;
+        margin-top: 0.3125rem; 
+    }
+
+    .meal-details-flex {
+        flex-direction: column;
+    }
+    
+    .meal-details-img {
+        width: 100%;
+        height: 9.375rem; 
+        margin-bottom: 0.625rem; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    
+    .meal-cart-container {
+        padding: 0.625rem !important; 
+    }
+
+    .btn-add-item {
+        width: 100%;
+        height: 3rem; 
+        margin-top: 0.5rem;
+    }
+
+    .item-qty-wrapper {
+        width: 100% !important;
+    }
+    .btn-save-meal {
+        height: 3.125rem; 
+        font-size: 1.1rem;
+    }
+}

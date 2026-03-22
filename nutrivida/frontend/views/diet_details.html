@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Dieta</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/dietDetail.css">
+    <link rel="stylesheet" href="../css/meal.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NutriVida</div>
+        <div>
+            <a href="nutritionist_dashboard.html" style="color:white; text-decoration:none;">Voltar ao Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="details-container">
+        <div class="header-info">
+            <div class="header-data">
+                
+                <div id="read-header">
+                    <h2 id="patient-name"></h2>
+                    <p>Início: <span id="diet-start"></span> | Fim: <span id="diet-end"></span></p>
+                    <div class="status-wrapper">
+                        <span id="diet-status" class="status-badge"></span>
+                    </div>
+                </div>
+
+                <div id="edit-header" class="hidden">
+                  <h2 id="edit-patient-name">Editando Dieta</h2>
+                        
+                    <div class="meal-form">
+                        <div class="form-grid-row">
+                            <div class="form-group">
+                                <label>Início:</label>
+                                <input type="date" id="edit-start" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fim:</label>
+                                <input type="date" id="edit-end" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <select id="edit-status" class="form-control">
+                                <option value="ativa">Ativa</option>
+                                <option value="finalizada">Finalizada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button id="btn-toggle-edit" class="btn-edit-mode">Editar Dieta</button>
+                <button id="btn-save-changes" class="btn-save-all hidden">Salvar Alterações</button>
+            </div>
+        </div>
+
+        <hr class="separator">
+
+        <h3 class="section-title">Refeições do Dia</h3>
+        <div id="meals-container">
+            </div>
+
+        <div id="add-meal-area" class="add-meal-area hidden">
+            <button class="btn-save-all" onclick="openNewMealModal()">+ Adicionar Nova Refeição</button>
+        </div>
+    </div>
+
+    <div id="meal-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="meal-header modal-header-fix">
+                <h3 id="modal-title">Editar Refeição</h3>
+                <button id="btn-close-modal" class="btn-delete">X</button>
+            </div>
+            
+            <form id="modal-form" class="meal-form">
+                <input type="hidden" id="modal-meal-id">
+                
+                <div class="form-group">
+                    <label>Tipo:</label>
+                    <input type="text" id="modal-meal-type" class="form-control" placeholder="Ex: Café da Manhã">
+                </div>
+                
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <textarea id="modal-meal-desc" class="form-control" rows="3"></textarea>
+                </div>
+             <div class="form-group">
+                <label>Foto (Opcional):</label>
+                
+                <div class="upload-wrapper">
+                    <label for="modal-meal-photo" class="btn-file-select">
+                        Escolher Arquivo
+                    </label>
+                    
+                    <span id="file-name-text" class="file-name-display">Nenhum arquivo selecionado</span>
+                    
+                    <input type="file" id="modal-meal-photo" class="hidden-file-input">
+                </div>
+            </div>
+
+                <hr>
+
+                <div class="meal-cart-container">
+                    <h4 class="cart-header">Alimentos</h4>
+                    
+                    <div class="add-item-row">
+                        <div class="item-select-wrapper">
+                            <select id="modal-aliment-select" class="form-control">
+                                </select>
+                        </div>
+                        <div class="item-qty-wrapper">
+                            <input type="number" id="modal-aliment-qty" class="form-control" placeholder="Qtd">
+                        </div>
+                        <button type="button" id="btn-modal-add-item" class="btn-add-item">
+                            +
+                        </button>
+                    </div>
+
+                    <table class="meal-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Qtd</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modal-items-list">
+                            </tbody>
+                    </table>
+                </div>
+                <button type="button" id="btn-modal-save" class="btn-save-meal">Salvar Refeição</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/dietDetails.js"></script>
+    <script type="module" src="../js/meal.js"></script>
+    <script type="module" src="../js/diet.js"></script>
+</body>
+</html>

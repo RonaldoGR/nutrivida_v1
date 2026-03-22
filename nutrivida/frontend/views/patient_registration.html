@@ -1,0 +1,107 @@
+l<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/meal.css">
+</head>
+<body>
+
+<div class="register-card">
+    <h2>Novo Paciente</h2>
+    
+ <form id="patient-full-form" class="form-registration-mode">
+    
+  <div class="form-group">
+        <label>Foto de Perfil (Opcional):</label>
+        <div class="image-upload-container">
+            <label for="patient-photo-upload" class="image-upload-label photo-label-disabled" id="photo-label">
+                <img id="preview-img" class="image-preview" src="" alt="Preview">
+                <span id="upload-text" class="upload-placeholder-text">Clique para enviar foto</span>
+            </label>
+            <input type="file" id="patient-photo-upload" name="photo" class="hidden-file-input" disabled>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Nome Completo:</label>
+        <input type="text" id="p-name" name="name" class="form-control" disabled required>
+    </div>
+
+    <div class="form-grid-row">
+        <div class="form-group">
+            <label>E-mail:</label>
+            <input type="email" id="p-email" name="email" class="form-control" disabled required>
+        </div>
+        <div class="form-group">
+            <label>CPF:</label>
+            <input type="text" id="p-cpf" name="cpf" class="form-control" disabled required>
+        </div>
+    </div>
+
+    <div class="form-grid-row">
+        <div class="form-group">
+            <label>Telefone:</label>
+            <input type="text" name="phone" class="form-control" placeholder="(00) 00000-0000" disabled required>
+        </div>
+        <div class="form-group">
+            <label>Data de Nascimento:</label>
+            <input type="date" name="dateBirth" class="form-control" disabled required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Senha:</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+    <h4 style="margin-bottom: 15px; color: #555;">Endereço</h4>
+
+    <div class="form-grid-row">
+        <div class="form-group">
+            <label>CEP:</label>
+            <input type="text" id="p-cep" name="zip_code" class="form-control" disabled required>
+        </div>
+        <div class="form-group">
+            <label>Rua:</label>
+            <input type="text" id="p-street" name="street" class="form-control" disabled required>
+        </div>
+    </div>
+
+    <div class="form-grid-row">
+        <div class="form-group">
+            <label>Número:</label>
+            <input type="text" id="p-number" name="number" class="form-control" disabled required>
+        </div>
+        <div class="form-group">
+            <label>Bairro:</label>
+            <input type="text" id="p-neighborhood" name="neighborhood" class="form-control" disabled required>
+        </div>
+    </div>
+
+    <div class="form-grid-row">
+        <div class="form-group">
+            <label>Cidade:</label>
+            <input type="text" id="p-city" name="city" class="form-control" disabled required>
+        </div>
+        <div class="form-group">
+            <label>Estado (UF):</label>
+            <input type="text" id="p-state" name="state" class="form-control" disabled required>
+        </div>
+        <input type="hidden" name="country" value="Brasil"> 
+    </div>
+
+    <div id="save-area" class="save-area hidden">
+        <button type="submit" id="btnSubmit" class="btn-save-meal">Finalizar Cadastro</button>
+        <p id="msg" style="margin-top:10px; text-align:center; font-weight:bold;"></p>
+    </div>
+
+</form>
+    <a href="login.html" class="back-link">Voltar para Login</a>
+</div>
+
+<script src="../js/register.js"></script>
+</body>
+</html>

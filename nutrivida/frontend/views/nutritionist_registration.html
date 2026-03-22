@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Nutricionista</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+
+<div class="register-card">
+    <h2>Novo Nutricionista</h2>
+    
+    <form id="formNutri" enctype="multipart/form-data">
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label>Nome Completo</label>
+                <input type="text" name="name" required>
+            </div>
+            
+            <div class="row">
+                <div class="col input-group">
+                    <label>CPF</label>
+                    <input type="text" name="cpf" required>
+                </div>
+                <div class="col input-group">
+                    <label>CRN</label>
+                    <input type="text" name="crn" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Foto de Perfil</label>
+                <input type="file" name="photo" accept="image/*">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" name="password" required>
+            </div>
+        </div>
+
+        <button type="submit" id="btnSubmit">Cadastrar</button>
+        <p id="msg" style="text-align: center; margin-top: 10px; font-weight: bold;"></p>
+    </form>
+
+    <a href="login.html" class="back-link">Voltar para Login</a>
+</div>
+
+<script src="../js/register.js"></script>
+</body>
+</html>

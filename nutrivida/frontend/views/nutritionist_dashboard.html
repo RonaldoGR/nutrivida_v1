@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Nutricionista</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/aliment.css">
+    <link rel="stylesheet" href="../css/diet.css">
+    <link rel="stylesheet" href="../css/meal.css">
+</head>
+<body>
+
+    <nav class="navbar" style="background-color: #0056b3;"> <h2>Painel Administrativo</h2>
+      <div class="nav-right-container">
+        <a href="nutritionist_details.html" class="nav-link-profile">Meu Perfil</a> 
+        <a href="nutritionist_password.html" class="nav-link-profile">Redefinir Senha</a> 
+        <span id="headerName">Carregando...</span>
+        <button class="btn-logout" onclick="logout()">Sair</button>
+    </div>
+    </nav>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Gerenciar</h3>
+                <div class="admin-menu">
+                    <button onclick="loadContent('alimentos')"> Alimentos</button>
+                    <button onclick="loadContent('refeicoes')"> Refeições</button>
+                    <button onclick="loadContent('dietas')"> Dietas</button>
+                    <button onclick="window.location.href='nutritionist_patients.html'"> Pacientes</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Meus Dados</h3>
+                <img id="nutriFoto" src="" alt="Foto de Perfil" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
+                <p id="nutriEmail">Carregando...</p>
+                <p id="nutriCrn">...</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="card dynamic">
+                <div id="dynamicContent">
+                    <h3>Bem-vindo!</h3>
+                    <p>Selecione uma opção no menu ao lado para começar.</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+<script type="module" src="../js/nutritionistDashboard.js"></script>
+<script type="module" src="../js/aliment.js"></script>
+<script type="module" src="../js/diet.js"></script>
+<script type="module" src="../js/meal.js"></script>
+</body>
+</html>

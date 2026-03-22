@@ -1,0 +1,139 @@
+/* --- Cabeçalho da Seção --- */
+.diet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.diet-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+/* --- Botão Nova Dieta --- */
+.btn-new-diet {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    
+}
+
+.btn-new-diet:hover {
+    background-color: #218838;
+}
+
+/* --- Tabela de Dietas --- */
+.diet-table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    overflow: hidden; 
+}
+
+.diet-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.diet-table th, 
+.diet-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.diet-table th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- Badges de Status --- */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724; 
+}
+
+.status-finalized {
+    background-color: #cce5ff;
+    color: #004085; 
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24; 
+}
+
+/* --- Botões de Ação  --- */
+.diet-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit {
+    background-color: #ffc107; 
+    color: #212529;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.85;
+}
+
+
+@media (max-width: 700px) {
+    .diet-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.625rem; 
+    }
+    
+    .btn-new-diet {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .diet-actions {
+        flex-direction: column;
+    }
+
+    .diet-actions button {
+        width: 100%;
+        margin-bottom: 0.3125rem;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Dados - NutriVida</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/meal.css"> <link rel="stylesheet" href="../css/patientDetails.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>NutriVida | Meus Dados</h2>
+        <div class="nav-right-container">
+            <a href="patient_dashboard.html" class="nav-link-profile">Início</a>
+            <a href="patient_addresses.html" class="nav-link-profile">Meus Endereços</a>
+            <a href="patient_details.html" class="nav-link-profile">Meu Perfil</a>
+            <a href="patient_password.html" class="nav-link-profile">Redefinir Senha</a>
+            <button class="btn-logout" id="btnLogout">Sair</button>
+        </div>
+    </nav>
+
+    <div class="details-page-container">
+        <div class="meal-form profile-card">
+            
+            <div class="meal-header">
+                <h3>Dados Cadastrais</h3>
+                <button id="btn-toggle-edit" class="btn-edit-mode">Editar Dados</button>
+            </div>
+            <hr>
+
+         <form id="patient-full-form">
+               <div class="form-group">
+                <label class="photo-label-title">Foto de Perfil:</label>
+                
+                <div class="patient-photo-container">
+                    <div class="patient-photo-display-only">
+                         <img id="patient-preview-img" class="patient-photo-img" src="">
+                    </div>
+                </div>
+
+                <div class="upload-wrapper centered-upload">
+                    <label for="patient-photo-upload" class="btn-file-select disabled" id="photo-btn-label">
+                        Escolher Arquivo
+                    </label>
+                    <span id="file-name-text" class="file-name-display">Nenhum arquivo selecionado</span>
+                    <input type="file" id="patient-photo-upload" class="hidden-file-input" disabled>
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label>Nome Completo:</label>
+                    <input type="text" id="p-name" class="form-control" disabled>
+                </div>
+
+                <div class="form-grid-row">
+                    <div class="form-group">
+                        <label>E-mail:</label>
+                        <input type="email" id="p-email" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>CPF:</label>
+                        <input type="text" id="p-cpf" class="form-control" disabled>
+                    </div>
+                </div>
+
+                <div id="save-area" class="save-area hidden">
+                    <button type="button" id="btn-save-profile" class="btn-save-meal">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/patientDetails.js"></script>
+</body>
+</html>
