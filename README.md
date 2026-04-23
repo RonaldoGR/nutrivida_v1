@@ -332,7 +332,43 @@ environment:
 
 Estrutura de Pastas
 
-nutrivida_v1/ │ └── nutrivida/ ├── frontend/ │ ├── views/ # Páginas HTML │ │ ├── login.html │ │ ├── patient_registration.html │ │ ├── patient_dashboard.html │ │ ├── patient_details.html │ │ ├── patient_addresses.html │ │ ├── patient_password.html │ │ ├── nutritionist_dashboard.html │ │ ├── nutritionist_patients.html │ │ ├── nutritionist_password.html │ │ └── diet_details.html │ │ │ └── assets/ │ ├── css/ # Estilos CSS │ │ ├── dashboard.css │ │ ├── meal.css │ │ ├── diet.css │ │ ├── aliment.css │ │ ├── login.css │ │ ├── register.css │ │ ├── password.css │ │ ├── patientDetails.css │ │ ├── address.css │ │ └── dietDetail.css │ │ │ ├── js/ # Services (Lógica) │ │ ├── auth.js │ │ ├── patientDashboard.js │ │ ├── nutritionistDashboard.js │ │ ├── diet.js │ │ ├── meal.js │ │ ├── aliment.js │ │ ├── patientDetails.js │ │ ├── patientAddresses.js │ │ └── ... │ │ │ └── images/ # Fotos de perfil │ ├── backend/ │ ├── controllers/ │ │ ├── PatientController.php �� │ ├── NutritionistController.php │ │ ├── DietController.php │ │ ├── MealController.php │ │ ├── AlimentController.php │ │ └── AddressController.php │ │ │ ├── services/ │ │ ├── PatientService.php │ │ ├── NutritionistService.php │ │ ├── DietService.php │ │ ├── MealService.php │ │ ├── AlimentService.php │ │ └── AddressService.php │ │ │ ├── repositories/ │ │ ├── PatientRepository.php │ │ ├── NutritionistRepository.php │ │ ├── DietRepository.php │ │ ├── MealRepository.php │ │ ├── MealAlimentRepository.php │ │ ├── AlimentRepository.php │ │ └── AddressRepository.php │ │ │ ├── models/ │ │ ├── PatientModel.php │ │ ├── NutritionistModel.php │ │ ├── DietModel.php │ │ ├── MealModel.php │ │ ├── MealAlimentModel.php │ │ ├── AlimentModel.php │ │ └── AddressModel.php │ │ │ ├── routes/ │ │ ├── PatientRouter.php │ │ ├── NutritionistRouter.php │ │ ├── DietRouter.php │ │ ├── MealRouter.php │ │ ├── AlimentRouter.php │ │ └── AddressRouter.php │ │ │ └── config/ │ ├── Connection.php # Conexão PDO │ └── Upload.php # Config upload │ ├── api/ │ ├── patient.php # Endpoints paciente │ ├── nutritionist.php # Endpoints nutricionista │ ├── diet.php # Endpoints dieta │ ├── meal.php # Endpoints refeição │ ├── aliment.php # Endpoints alimento │ └── address.php # Endpoints endereço │ ├── docker-compose.yml # Orquestração containers ├── Dockerfile # Imagem PHP └── .env.example #
+nutrivida/                      # raiz do app (dentro do repo nutrivida_v1)
+├─ frontend/
+│  ├─ views/
+│  │  ├─ login.html
+│  │  ├─ patient_registration.html
+│  │  ├─ patient_dashboard.html
+│  │  ├─ patient_details.html
+│  │  ├─ patient_addresses.html
+│  │  ├─ patient_password.html
+│  │  ├─ nutritionist_dashboard.html
+│  │  ├─ nutritionist_patients.html
+│  │  └─ diet_details.html
+│  └─ assets/
+│     ├─ css/        (dashboard.css, meal.css, diet.css, ...)
+│     ├─ js/         (auth.js, diet.js, meal.js, aliment.js, ...)
+│     └─ images/     (fotos de perfil, refeições)
+│
+├─ backend/
+│  ├─ controllers/   (PatientController.php, DietController.php, ...)
+│  ├─ services/      (PatientService.php, DietService.php, ...)
+│  ├─ repositories/  (PatientRepository.php, DietRepository.php, ...)
+│  ├─ models/        (PatientModel.php, DietModel.php, ...)
+│  ├─ routes/        (PatientRouter.php, DietRouter.php, ...)
+│  └─ config/        (Connection.php, Upload.php)
+│
+├─ api/
+│  ├─ patient.php
+│  ├─ nutritionist.php
+│  ├─ diet.php
+│  ├─ meal.php
+│  ├─ aliment.php
+│  └─ address.php
+│
+├─ docker-compose.yml
+├─ Dockerfile
+├─ .env.example
+└─ README.md
 
 Observações
 Este projeto foi construído intencionalmente sem frameworks e bibliotecas para consolidar os fundamentos do desenvolvimento web. As decisões de arquitetura foram tomadas com fins didáticos e educacionais:
