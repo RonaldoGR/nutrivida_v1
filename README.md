@@ -41,6 +41,41 @@ Todo o **CRUD foi implementado com SQL escrito manualmente**, sem ORM, para gara
 
 A arquitetura foi inspirada no padrão do **Spring Framework (Java)**, adaptada para PHP puro, com separação clara de responsabilidades em camadas:
 
+┌─────────────────────────────────────────────────────┐
+│  FRONTEND (Views + Services + Assets)               │
+├─────────────────────────────────────────────────────┤
+│ Views (HTML)                                        │
+│ └── Renderização e Eventos                          │
+│                                                     │
+│ Services (JavaScript)                               │
+│ └── Lógica de Aplicação + Fetch API                 │
+│                                                     │
+│ Assets (CSS + Images)                               │
+│ └── Estilos e Recursos                              │
+└────────┬────────────────────────────────────────────┘
+         │ HTTP/JSON
+         ▼
+┌─────────────────────────────────────────────────────┐
+│  API (Endpoints REST)                               │
+├────────────────���────────────────────────────────┤
+│ patient.php, diet.php, meal.php, aliment.php...     │
+└────────┬────────────────────────────────────────────┘
+         │ HTTP
+         ▼
+┌─────────────────────────────────────────────────────┐
+│  BACKEND (Controllers → Services → Repositories)    │
+├─────────────────────────────────────────────────────┤
+│ Controllers ─┐                                      │
+│              ├─→ Services ─┐                        │
+│              │             ├─→ Repositories ─→ SQL  │
+│              └─────────────┤                        │
+│                            └─→ Models               │
+└────────┬────────────────────────────────────────────┘
+         │ SQL
+         ▼
+┌─────────────────────────────────────────────────────┐
+│  MySQL 8 (Docker)                                   │
+└─────────────────────────────────────────────────────┘
 
 
 
