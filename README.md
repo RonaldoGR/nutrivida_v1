@@ -104,21 +104,42 @@ Desenvolvido com **HTML, CSS e JavaScript puros**, sem nenhuma biblioteca ou fra
 **Principais funcionalidades:**
 
 **Para Pacientes:**
-- Tela de login e registro
-- Dashboard com dietas ativas/finalizadas
-- Visualização detalhada de dietas com refeições
-- Gerenciamento de perfil e endereços
-- Redefinição de senha
-- Consulta de informações nutricionais das refeições
+- `login.html` - Tela de autenticação (paciente/nutricionista)
+- `patient_registration.html` - Cadastro de paciente
+- `patient_dashboard.html` - Dashboard com dietas ativas/finalizadas
+- `patient_details.html` - Perfil do paciente
+- `patient_addresses.html` - Gerenciamento de endereços
+- `patient_password.html` - Redefinição de senha
+- `diet_details.html` - Visualização detalhada de dieta
 
 **Para Nutricionistas:**
-- Painel administrativo
-- Gerenciamento de alimentos (CRUD completo)
-- Gerenciamento de refeições (CRUD completo)
-- Gerenciamento de dietas (CRUD completo)
-- Gerenciamento de pacientes
-- Perfil e redefinição de senha
-- Upload de fotos para perfil e refeições
+- `nutritionist_dashboard.html` - Painel administrativo (CRUD de alimentos, refeições, dietas)
+- `nutritionist_patients.html` - Gerenciamento de pacientes
+- `nutritionist_password.html` - Redefinição de senha
+
+#### **Services (JavaScript)**
+
+Camada de lógica de aplicação que comunica com a API do backend.
+
+| Serviço | Responsabilidade |
+|---|---|
+| **auth.js** | Autenticação (login/logout), gerenciamento de sessão |
+| **patientDashboard.js** | Lógica da dashboard de pacientes |
+| **nutritionistDashboard.js** | Lógica da dashboard de nutricionistas |
+| **diet.js** | Operações CRUD de dietas |
+| **meal.js** | Operações CRUD de refeições |
+| **aliment.js** | Operações CRUD de alimentos |
+| **patientDetails.js** | Gerenciamento de perfil de paciente |
+| **patientAddresses.js** | Gerenciamento de endereços |
+| **nutritionistPatients.js** | Gerenciamento de pacientes (nutricionista) |
+| **password.js** | Alteração de senha |
+| **register.js** | Lógica de registro de novo usuário |
+
+**Cada Service:**
+- Faz requisições HTTP para a API
+- Processa respostas JSON
+- Passa dados para as Views
+- Implementa tratamento de erros
 
 **Técnicas utilizadas:**
 - Manipulação de DOM com JavaScript vanilla
@@ -127,8 +148,82 @@ Desenvolvido com **HTML, CSS e JavaScript puros**, sem nenhuma biblioteca ou fra
 - Armazenamento local com `localStorage` e sessões PHP
 - Upload de imagens com validação frontend
 
-**Estrutura:**
+## Estilos (CSS)
+Responsivos e organizados por página/funcionalidade:
+```
+css/
+├── dashboard.css        # Estilos do layout principal
+├── meal.css            # Estilos de formulários de refeição
+├── diet.css            # Estilos da gestão de dietas
+├── aliment.css         # Estilos da gestão de alimentos
+├── login.css           # Estilos da página de login
+├── register.css        # Estilos da página de registro
+├── password.css        # Estilos para alteração de senha
+├── patientDetails.css  # Estilos do perfil do paciente
+├── address.css         # Estilos de gerenciamento de endereços
+├── dietDetail.css      # Estilos de detalhes de dieta
+└─ nutritionistPatients.css # Estilos da gestão de paciente
+```
 
+
+## Fluxo de dados Frontend:
+```
+View (HTML)
+    ↓ (dispara eventos)
+Service (JavaScript)
+    ↓ (faz requisição)
+Fetch API → Backend
+    ↓ (recebe JSON)
+Service (processa dados)
+    ↓ (manipula DOM)
+View (atualiza elementos)
+```
+
+**Estrutura:**
+```
+frontend/
+├── views/                     # Páginas HTML
+│   ├── login.html
+│   ├── patient_registration.html
+│   ├── patient_dashboard.html
+│   ├── patient_details.html
+│   ├── patient_addresses.html
+│   ├── patient_password.html
+│   ├── nutritionist_dashboard.html
+│   ├── nutritionist_patients.html
+│   ├── nutritionist_password.html
+│   └── diet_details.html
+│
+└── assets/
+    ├── css/                   # Estilos (Services de UI)
+    │   ├── dashboard.css
+    │   ├── meal.css
+    │   ├── diet.css
+    │   ├── aliment.css
+    │   ├── login.css
+    │   ├── register.css
+    │   ├── password.css
+    │   ├── patientDetails.css
+    │   ├── address.css
+    │   ├── dietDetail.css
+    │   └── nutritionistPatients.css
+    │
+    ├── js/                    # Services (Lógica de Aplicação)
+    │   ├── auth.js           # Autenticação
+    │   ├── patientDashboard.js
+    │   ├── nutritionistDashboard.js
+    │   ├── diet.js
+    │   ├── meal.js
+    │   ├── aliment.js
+    │   ├── patientDetails.js
+    │   ├── patientAddresses.js
+    │   ├── nutritionistPatients.js
+    │   ├── password.js
+    │   ├── register.js
+    │   └── app.js            # Arquivo raiz/configurações
+    │
+    └── images/               # Fotos de perfil e refeições
+```
 
 
 
@@ -136,7 +231,7 @@ Desenvolvido com **HTML, CSS e JavaScript puros**, sem nenhuma biblioteca ou fra
 
 ---
 
-### ⚙️ Backend
+### Backend
 
 Desenvolvido em **PHP puro**, organizado em camadas inspiradas no padrão do Spring:
 
@@ -172,7 +267,54 @@ Desenvolvido em **PHP puro**, organizado em camadas inspiradas no padrão do Spr
 
 **Estrutura:**
 
-
+```
+backend/
+├── controllers/
+│   ├── PatientController.php
+│   ├── NutritionistController.php
+│   ├── DietController.php
+│   ├── MealController.php
+│   ├── AlimentController.php
+│   └── AddressController.php
+│
+├── services/
+│   ├── PatientService.php
+│   ├── NutritionistService.php
+│   ├── DietService.php
+│   ├── MealService.php
+│   ├── AlimentService.php
+│   └── AddressService.php
+│
+├── repositories/
+│   ├── PatientRepository.php
+│   ├── NutritionistRepository.php
+│   ├── DietRepository.php
+│   ├── MealRepository.php
+│   ├── MealAlimentRepository.php
+│   ├── AlimentRepository.php
+│   └── AddressRepository.php
+│
+├── models/
+│   ├── PatientModel.php
+│   ├── NutritionistModel.php
+│   ├── DietModel.php
+│   ├── MealModel.php
+│   ├── MealAlimentModel.php
+│   ├── AlimentModel.php
+│   └── AddressModel.php
+│
+├── routes/
+│   ├── PatientRouter.php
+│   ├── NutritionistRouter.php
+│   ├── DietRouter.php
+│   ├── MealRouter.php
+│   ├── AlimentRouter.php
+│   └── AddressRouter.php
+│
+└── config/
+    ├── Connection.php      # Gerencia conexão PDO com MySQL
+    └── Upload.php          # Configurações de upload de imagens
+```
 
 
 
@@ -247,74 +389,88 @@ Padrão de resposta (erro):
 }
 ```
 
-Tecnologias Utilizadas
-Tecnologia	Versão	Uso
-PHP	8.2	Backend e API
-HTML	5	Estrutura das páginas
-CSS	3	Estilização responsiva
-JavaScript	ES6+	Interatividade e consumo da API
-MySQL	8	Banco de dados relacional
-Apache	2.4	Servidor web
-PDO	nativo	Abstração para acesso ao banco (prepared statements)
-phpMyAdmin	latest	Interface visual para o banco de dados
-Docker	latest	Containerização da aplicação
-Docker Compose	latest	Orquestração de containers
+## Tecnologias Utilizadas
+
+| Tecnologia | Versão | Uso |
+|---|---:|---|
+| PHP | 8.2 | Backend e API |
+| HTML | 5 | Estrutura das páginas |
+| CSS | 3 | Estilização responsiva |
+| JavaScript | ES6+ | Interatividade e consumo da API |
+| MySQL | 8 | Banco de dados relacional |
+| Apache | 2.4 | Servidor web |
+| PDO | nativo | Abstração para acesso ao banco (prepared statements) |
+| phpMyAdmin | latest | Interface visual para o banco de dados |
+| Docker | latest | Containerização da aplicação |
+| Docker Compose | latest | Orquestração de containers |
 
 
-Como Rodar o Projeto
-Pré-requisitos
+
+## Como Rodar o Projeto
+### Pré-requisitos
 Docker instalado
 Docker Compose instalado
 Terminal/Command Prompt
-Passo a passo
-1. Clone o repositório
 
-bash
+### Passo a passo
+1. Clone o repositório
+```bash
 git clone https://github.com/RonaldoGR/nutrivida_v1.git
 cd nutrivida_v1
-2. Navegue até a pasta do projeto
+```
 
-bash
+2. Navegue até a pasta do projeto
+```bash
 cd nutrivida
+```
 3. Suba os containers
 
-bash
+```bash
 docker compose up -d
+```
+
 Esse comando irá subir três serviços automaticamente:
 
-Serviço	Imagem	Descrição	Porta
-php	php:8.2-apache	Servidor web com PHP e Apache	8080
-mysql	mysql:latest	Banco de dados MySQL	3307
-phpmyadmin	phpmyadmin:latest	Interface web para o banco	8081
-4. Acesse a aplicação
+| Serviço     | Imagem             | Descrição                         | Porta (host:container) |
+|-------------|--------------------:|----------------------------------|------------------------:|
+| php         | `php:8.2-apache`    | Servidor web com PHP e Apache     | `8080:80` (acesso: http://localhost:8080) |
+| mysql       | `mysql:latest`      | Banco de dados MySQL              | `3307:3306` (acesso externo: :3307) |
+| phpmyadmin  | `phpmyadmin:latest` | Interface web para o banco        | `8081:80` (acesso: http://localhost:8081) |
 
-Sistema NutriVida: http://localhost:8080
-phpMyAdmin: http://localhost:8081
-Servidor: mysql
-Usuário: root
-Senha: (deixar em branco - configurado sem senha para desenvolvimento)
-5. Primeiros passos
+## 4. Acesse a aplicação
 
+- Sistema NutriVida: http://localhost:8080  
+- phpMyAdmin: http://localhost:8081
+
+Credenciais (desenvolvimento)
+- Servidor: `mysql` (nome do serviço usado pelo phpMyAdmin e pela aplicação dentro da rede Docker)  
+- Usuário: `root`  
+- Senha: (deixar em branco — configuração com senha vazia para desenvolvimento)
+
+## 5. Primeiros passos
 Acesse a página de login e escolha "Sou Nutricionista" ou "Sou Paciente"
 Clique em "Cadastrar" para criar uma conta
 Faça o login e explore o sistema
-6. Para derrubar os containers
 
-bash
+## 6. Para derrubar os containers
+```bash
 docker compose down
+```
+
 Para derrubar e remover os volumes (apaga os dados do banco):
-
-bash
+```bash
 docker compose down -v
-Para visualizar logs dos containers:
+```
 
-bash
+Para visualizar logs dos containers:
+```bash
 docker compose logs -f
-🔧 Variáveis de Ambiente
+```
+
+ ## Variáveis de Ambiente
 As variáveis de ambiente são configuradas diretamente no docker-compose.yml. Para um ambiente de produção, crie um arquivo .env:
 
-env
-# .env
+```.env
 MYSQL_ROOT_PASSWORD=sua_senha_root
 MYSQL_DATABASE=nutrivida
 MYSQL_USER=nutrivida_user
@@ -324,75 +480,150 @@ PMA_HOST=mysql
 PMA_PORT=3306
 PMA_USER=root
 PMA_PASSWORD=sua_senha_root
+```
+
 Depois, atualize o docker-compose.yml para usar essas variáveis:
 
-YAML
+```YAML
 environment:
   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   MYSQL_DATABASE: ${MYSQL_DATABASE}
-
-
-Estrutura de Pastas
-
-```
-nutrivida/                      # raiz do app (dentro do repo nutrivida_v1)
-├─ frontend/
-│  ├─ views/
-│  │  ├─ login.html
-│  │  ├─ patient_registration.html
-│  │  ├─ patient_dashboard.html
-│  │  ├─ patient_details.html
-│  │  ├─ patient_addresses.html
-│  │  ├─ patient_password.html
-│  │  ├─ nutritionist_dashboard.html
-│  │  ├─ nutritionist_patients.html
-│  │  └─ diet_details.html
-│  └─ assets/
-│     ├─ css/        (dashboard.css, meal.css, diet.css, ...)
-│     ├─ js/         (auth.js, diet.js, meal.js, aliment.js, ...)
-│     └─ images/     (fotos de perfil, refeições)
-│
-├─ backend/
-│  ├─ controllers/   (PatientController.php, DietController.php, ...)
-│  ├─ services/      (PatientService.php, DietService.php, ...)
-│  ├─ repositories/  (PatientRepository.php, DietRepository.php, ...)
-│  ├─ models/        (PatientModel.php, DietModel.php, ...)
-│  ├─ routes/        (PatientRouter.php, DietRouter.php, ...)
-│  └─ config/        (Connection.php, Upload.php)
-│
-├─ api/
-│  ├─ patient.php
-│  ├─ nutritionist.php
-│  ├─ diet.php
-│  ├─ meal.php
-│  ├─ aliment.php
-│  └─ address.php
-│
-├─ docker-compose.yml
-├─ Dockerfile
-├─ .env.example
-└─ README.m
 ```
 
-Observações
+
+## Estrutura de Pastas
+
+```
+nutrivida_v1/
+│
+├── nutrivida/
+│   ├── frontend/
+│   │   ├── views/                  # Páginas HTML (Views)
+│   │   │   ├── login.html
+│   │   │   ├── patient_registration.html
+│   │   │   ├── patient_dashboard.html
+│   │   │   ├── patient_details.html
+│   │   │   ├── patient_addresses.html
+│   │   │   ├── patient_password.html
+│   │   │   ├── nutritionist_dashboard.html
+│   │   │   ├── nutritionist_patients.html
+│   │   │   ├── nutritionist_password.html
+│   │   │   └── diet_details.html
+│   │   │
+│   │   └── assets/
+│   │       ├── css/                # Estilos CSS (Services de UI)
+│   │       │   ├── dashboard.css
+│   │       │   ├── meal.css
+│   │       │   ├── diet.css
+│   │       │   ├── aliment.css
+│   │       │   ├── login.css
+│   │       │   ├── register.css
+│   │       │   ├── password.css
+│   │       │   ├── patientDetails.css
+│   │       │   ├── address.css
+│   │       │   ├── dietDetail.css
+│   │       │   └── nutritionistPatients.css
+│   │       │
+│   │       ├── js/                 # Services - Lógica de Aplicação
+│   │       │   ├── auth.js                    # Autenticação (login/logout)
+│   │       │   ├── patientDashboard.js        # Lógica da dashboard paciente
+│   │       │   ├── nutritionistDashboard.js   # Lógica da dashboard nutricionista
+│   │       │   ├── diet.js                    # CRUD de dietas
+│   │       │   ├── meal.js                    # CRUD de refeições
+│   │       │   ├── aliment.js                 # CRUD de alimentos
+│   │       │   ├── patientDetails.js          # Gerenciamento de perfil
+│   │       │   ├── patientAddresses.js        # Gerenciamento de endereços
+│   │       │   ├── nutritionistPatients.js    # Gerenciamento de pacientes
+│   │       │   ├── password.js                # Alteração de senha
+│   │       │   ├── register.js                # Lógica de registro
+│   │       │   └── app.js                     # Arquivo raiz/inicialização
+│   │       │
+│   │       └── images/             # Fotos de perfil e refeições
+│   │
+│   ├── backend/
+│   │   ├── controllers/
+│   │   │   ├── PatientController.php
+│   │   │   ├── NutritionistController.php
+│   │   │   ├── DietController.php
+│   │   │   ├── MealController.php
+│   │   │   ├── AlimentController.php
+│   │   │   └── AddressController.php
+│   │   │
+│   │   ├── services/
+│   │   │   ├── PatientService.php
+│   │   │   ├── NutritionistService.php
+│   │   │   ├── DietService.php
+│   │   │   ├── MealService.php
+│   │   │   ├── AlimentService.php
+│   │   │   └── AddressService.php
+│   │   │
+│   │   ├── repositories/
+│   │   │   ├── PatientRepository.php
+│   │   │   ├── NutritionistRepository.php
+│   │   │   ├── DietRepository.php
+│   │   │   ├── MealRepository.php
+│   │   │   ├── MealAlimentRepository.php
+│   │   │   ├── AlimentRepository.php
+│   │   │   └── AddressRepository.php
+│   │   │
+│   │   ├── models/
+│   │   │   ├── PatientModel.php
+│   │   │   ├── NutritionistModel.php
+│   │   │   ├── DietModel.php
+│   │   │   ├── MealModel.php
+│   │   │   ├── MealAlimentModel.php
+│   │   │   ├── AlimentModel.php
+│   │   │   └── AddressModel.php
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── PatientRouter.php
+│   │   │   ├── NutritionistRouter.php
+│   │   │   ├── DietRouter.php
+│   │   │   ├── MealRouter.php
+│   │   │   ├── AlimentRouter.php
+│   │   │   └── AddressRouter.php
+│   │   │
+│   │   └── config/
+│   │       ├── Connection.php       # Gerencia conexão PDO com MySQL
+│   │       └── Upload.php           # Configurações de upload de imagens
+│   │
+│   ├── api/                         # API REST (Gateway)
+│   │   ├── patient.php              # Endpoints de paciente
+│   │   ├── nutritionist.php         # Endpoints de nutricionista
+│   │   ├── diet.php                 # Endpoints de dieta
+│   │   ├── meal.php                 # Endpoints de refeição
+│   │   ├── aliment.php              # Endpoints de alimento
+│   │   └── address.php              # Endpoints de endereço
+│   │
+│   ├── docker-compose.yml           # Orquestração dos containers
+│   ├── Dockerfile                   # Definição da imagem PHP
+│   └── .env.example                 # Exemplo de variáveis de ambiente
+│
+└── README.md                        # Este arquivo
+```
+
+## Observações
 Este projeto foi construído intencionalmente sem frameworks e bibliotecas para consolidar os fundamentos do desenvolvimento web. As decisões de arquitetura foram tomadas com fins didáticos e educacionais:
 
-Por que sem ORM?
+### Por que sem ORM?
 Entender como SQL funciona de verdade
 Aprender sobre prepared statements e segurança (SQL injection)
 Dominar operações CRUD na essência
 Compreender transações no banco de dados
-Por que sem framework PHP?
+
+### Por que sem framework PHP?
 Entender o ciclo de vida completo de uma requisição HTTP
 Aprender como rotas, controllers e middlewares funcionam
 Dominar gerenciamento de sessões e autenticação
 Compreender a separação de responsabilidades sem abstrações prontas
-Por que sem biblioteca JavaScript?
+
+### Por que sem biblioteca JavaScript?
 Entender manipulação de DOM nativa
 Aprender o fetch API e requisições HTTP
 Dominar closure, promises e async/await
 Compreender event handling e tratamento de eventos
-Por que arquitetura em camadas?
+
+### Por que arquitetura em camadas?
 Preparar para usar um framework profissional (Spring Boot em Java)
 Aprender padrões de design e arquitetura de software
 Entender a importância da separação de responsabilidades
