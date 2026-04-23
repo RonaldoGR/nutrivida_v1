@@ -606,28 +606,28 @@ nutrivida_v1/
 Este projeto foi construído intencionalmente sem frameworks e bibliotecas para consolidar os fundamentos do desenvolvimento web. As decisões de arquitetura foram tomadas com fins didáticos e educacionais:
 
 ### Por que sem ORM?
-Entender como SQL funciona de verdade
-Aprender sobre prepared statements e segurança (SQL injection)
-Dominar operações CRUD na essência
-Compreender transações no banco de dados
+Entender como SQL funciona de verdade.
+Aprender sobre prepared statements e segurança (SQL injection).
+Dominar operações CRUD na essência.
+Compreender transações no banco de dados.
 
 ### Por que sem framework PHP?
-Entender o ciclo de vida completo de uma requisição HTTP
-Aprender como rotas, controllers e middlewares funcionam
-Dominar gerenciamento de sessões e autenticação
-Compreender a separação de responsabilidades sem abstrações prontas
+Entender o ciclo de vida completo de uma requisição HTTP.
+Aprender como rotas, controllers e middlewares funcionam.
+Dominar gerenciamento de sessões e autenticação.
+Compreender a separação de responsabilidades sem abstrações prontas.
 
 ### Por que sem biblioteca JavaScript?
-Entender manipulação de DOM nativa
-Aprender o fetch API e requisições HTTP
-Dominar closure, promises e async/await
-Compreender event handling e tratamento de eventos
+Entender manipulação de DOM nativa.
+Aprender o fetch API e requisições HTTP.
+Dominar closure, promises e async/await.
+Compreender event handling e tratamento de eventos.
 
 ### Por que arquitetura em camadas?
-Preparar para usar um framework profissional (Spring Boot em Java)
-Aprender padrões de design e arquitetura de software
-Entender a importância da separação de responsabilidades
-Facilitar testes e manutenção de código
+Preparar para usar um framework profissional (Spring Boot em Java).
+Aprender padrões de design e arquitetura de software.
+Entender a importância da separação de responsabilidades.
+Facilitar testes e manutenção de código.
 
 
 
