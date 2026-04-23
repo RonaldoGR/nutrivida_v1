@@ -41,6 +41,7 @@ Todo o **CRUD foi implementado com SQL escrito manualmente**, sem ORM, para gara
 
 A arquitetura foi inspirada no padrão do **Spring Framework (Java)**, adaptada para PHP puro, com separação clara de responsabilidades em camadas:
 
+```
 ┌─────────────────────────────────────────────────────┐
 │  FRONTEND (Views + Services + Assets)               │
 ├─────────────────────────────────────────────────────┤
@@ -76,6 +77,7 @@ A arquitetura foi inspirada no padrão do **Spring Framework (Java)**, adaptada 
 ┌─────────────────────────────────────────────────────┐
 │  MySQL 8 (Docker)                                   │
 └─────────────────────────────────────────────────────┘
+```
 
 
 
@@ -332,6 +334,7 @@ environment:
 
 Estrutura de Pastas
 
+```
 nutrivida/                      # raiz do app (dentro do repo nutrivida_v1)
 ├─ frontend/
 │  ├─ views/
@@ -368,7 +371,8 @@ nutrivida/                      # raiz do app (dentro do repo nutrivida_v1)
 ├─ docker-compose.yml
 ├─ Dockerfile
 ├─ .env.example
-└─ README.md
+└─ README.m
+```
 
 Observações
 Este projeto foi construído intencionalmente sem frameworks e bibliotecas para consolidar os fundamentos do desenvolvimento web. As decisões de arquitetura foram tomadas com fins didáticos e educacionais:
