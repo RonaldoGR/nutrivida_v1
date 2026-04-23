@@ -58,7 +58,7 @@ A arquitetura foi inspirada no padrão do **Spring Framework (Java)**, adaptada 
          ▼
 ┌─────────────────────────────────────────────────────┐
 │  API (Endpoints REST)                               │
-├────────────────���────────────────────────────────┤
+├─────────────────────────────────────────────────────┤
 │ patient.php, diet.php, meal.php, aliment.php...     │
 └────────┬────────────────────────────────────────────┘
          │ HTTP
