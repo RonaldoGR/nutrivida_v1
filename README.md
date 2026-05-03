@@ -23,7 +23,7 @@ Este projeto é a **primeira versão** do sistema NutriVida, construída sem nen
 
 ##  Sobre o Projeto
 
-O **NutriVida** é uma plataforma web voltada para a **gestão de dietas nutricionais**, conectando pacientes a nutricionistas para acompanhamento personalizado de alimentação. Esta versão é um **protótipo educacional** que cobre as funcionalidades essenciais de um sistema web completo:
+O **NutriVida** é uma plataforma web voltada para a **gestão de dietas nutricionais**, conectando pacientes a nutricionistas para acompanhamento personalizado de alimentação. Esta versão é um **protótipo educacional** que cobre as funcionalidades essenciais de um sistema web:
 
 - Autenticação e cadastro de **pacientes** e **nutricionistas**
 - Gerenciamento de **dietas** personalizadas
@@ -252,7 +252,7 @@ Desenvolvido em **PHP puro**, organizado em camadas inspiradas no padrão do Spr
 - CRUD completo de **Refeições**
 - CRUD completo de **Alimentos**
 - CRUD completo de **Endereços**
-- Todo SQL escrito manualmente (INSERT, SELECT, UPDATE, DELETE) — sem ORM
+- Todo SQL escrito manualmente (INSERT, SELECT, UPDATE, DELETE, JOIN) — sem ORM
 - Upload e gerenciamento de imagens
 - Transações no banco de dados (ex: cadastro de paciente + endereço)
 
@@ -434,7 +434,7 @@ Esse comando irá subir três serviços automaticamente:
 | Serviço     | Imagem             | Descrição                         | Porta (host:container) |
 |-------------|--------------------:|----------------------------------|------------------------:|
 | php         | `php:8.2-apache`    | Servidor web com PHP e Apache     | `8080:80` (acesso: http://localhost:8080) |
-| mysql       | `mysql:latest`      | Banco de dados MySQL              | `3307:3306` (acesso externo: :3307) |
+| mysql       | `mysql:latest`      | Banco de dados MySQL              | `3306:3306` (acesso externo: :3306) |
 | phpmyadmin  | `phpmyadmin:latest` | Interface web para o banco        | `8081:80` (acesso: http://localhost:8081) |
 
 ## 4. Acesse a aplicação
@@ -451,6 +451,9 @@ Credenciais (desenvolvimento)
 Acesse a página de login e escolha "Sou Nutricionista" ou "Sou Paciente"
 Clique em "Cadastrar" para criar uma conta
 Faça o login e explore o sistema
+
+Observação: No arquivo `init.sql` está os dados cadastrados de teste. Você pode verificar por lá qual usuário deseja utilizar. 
+Por exemplo --- Login de um páciente: carlos@email.com | senha: 123
 
 ## 6. Para derrubar os containers
 ```bash
@@ -491,117 +494,6 @@ environment:
 ```
 
 
-## Estrutura de Pastas
-
-```
-nutrivida_v1/
-│
-├── nutrivida/
-│   ├── frontend/
-│   │   ├── views/                  # Páginas HTML (Views)
-│   │   │   ├── login.html
-│   │   │   ├── patient_registration.html
-│   │   │   ├── patient_dashboard.html
-│   │   │   ├── patient_details.html
-│   │   │   ├── patient_addresses.html
-│   │   │   ├── patient_password.html
-│   │   │   ├── nutritionist_dashboard.html
-│   │   │   ├── nutritionist_patients.html
-│   │   │   ├── nutritionist_password.html
-│   │   │   └── diet_details.html
-│   │   │
-│   │   └── assets/
-│   │       ├── css/                # Estilos CSS (Services de UI)
-│   │       │   ├── dashboard.css
-│   │       │   ├── meal.css
-│   │       │   ├── diet.css
-│   │       │   ├── aliment.css
-│   │       │   ├── login.css
-│   │       │   ├── register.css
-│   │       │   ├── password.css
-│   │       │   ├── patientDetails.css
-│   │       │   ├── address.css
-│   │       │   ├── dietDetail.css
-│   │       │   └── nutritionistPatients.css
-│   │       │
-│   │       ├── js/                 # Services - Lógica de Aplicação
-│   │       │   ├── auth.js                    # Autenticação (login/logout)
-│   │       │   ├── patientDashboard.js        # Lógica da dashboard paciente
-│   │       │   ├── nutritionistDashboard.js   # Lógica da dashboard nutricionista
-│   │       │   ├── diet.js                    # CRUD de dietas
-│   │       │   ├── meal.js                    # CRUD de refeições
-│   │       │   ├── aliment.js                 # CRUD de alimentos
-│   │       │   ├── patientDetails.js          # Gerenciamento de perfil
-│   │       │   ├── patientAddresses.js        # Gerenciamento de endereços
-│   │       │   ├── nutritionistPatients.js    # Gerenciamento de pacientes
-│   │       │   ├── password.js                # Alteração de senha
-│   │       │   ├── register.js                # Lógica de registro
-│   │       │   └── app.js                     # Arquivo raiz/inicialização
-│   │       │
-│   │       └── images/             # Fotos de perfil e refeições
-│   │
-│   ├── backend/
-│   │   ├── controllers/
-│   │   │   ├── PatientController.php
-│   │   │   ├── NutritionistController.php
-│   │   │   ├── DietController.php
-│   │   │   ├── MealController.php
-│   │   │   ├── AlimentController.php
-│   │   │   └── AddressController.php
-│   │   │
-│   │   ├── services/
-│   │   │   ├── PatientService.php
-│   │   │   ├── NutritionistService.php
-│   │   │   ├── DietService.php
-│   │   │   ├── MealService.php
-│   │   │   ├── AlimentService.php
-│   │   │   └── AddressService.php
-│   │   │
-│   │   ├── repositories/
-│   │   │   ├── PatientRepository.php
-│   │   │   ├── NutritionistRepository.php
-│   │   │   ├── DietRepository.php
-│   │   │   ├── MealRepository.php
-│   │   │   ├── MealAlimentRepository.php
-│   │   │   ├── AlimentRepository.php
-│   │   │   └── AddressRepository.php
-│   │   │
-│   │   ├── models/
-│   │   │   ├── PatientModel.php
-│   │   │   ├── NutritionistModel.php
-│   │   │   ├── DietModel.php
-│   │   │   ├── MealModel.php
-│   │   │   ├── MealAlimentModel.php
-│   │   │   ├── AlimentModel.php
-│   │   │   └── AddressModel.php
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── PatientRouter.php
-│   │   │   ├── NutritionistRouter.php
-│   │   │   ├── DietRouter.php
-│   │   │   ├── MealRouter.php
-│   │   │   ├── AlimentRouter.php
-│   │   │   └── AddressRouter.php
-│   │   │
-│   │   └── config/
-│   │       ├── Connection.php       # Gerencia conexão PDO com MySQL
-│   │       └── Upload.php           # Configurações de upload de imagens
-│   │
-│   ├── api/                         # API REST (Gateway)
-│   │   ├── patient.php              # Endpoints de paciente
-│   │   ├── nutritionist.php         # Endpoints de nutricionista
-│   │   ├── diet.php                 # Endpoints de dieta
-│   │   ├── meal.php                 # Endpoints de refeição
-│   │   ├── aliment.php              # Endpoints de alimento
-│   │   └── address.php              # Endpoints de endereço
-│   │
-│   ├── docker-compose.yml           # Orquestração dos containers
-│   ├── Dockerfile                   # Definição da imagem PHP
-│   └── .env.example                 # Exemplo de variáveis de ambiente
-│
-└── README.md                        # Este arquivo
-```
-
 ## Observações
 Este projeto foi construído intencionalmente sem frameworks e bibliotecas para consolidar os fundamentos do desenvolvimento web. As decisões de arquitetura foram tomadas com fins didáticos e educacionais:
 
@@ -632,6 +524,3 @@ Facilitar testes e manutenção de código.
 
 
 Desenvolvido por Ronaldo Gandra Rocha — IFSUL, 3º Semestre de Sistemas para Internet.
-
-
-
