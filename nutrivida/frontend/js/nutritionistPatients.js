@@ -8,9 +8,9 @@ let currentPatinetId = null;
 
 async function checkSession() {
     const pathArray = window.location.pathname.split('/');
-    const projectRoot = '/' + pathArray[1];
+    cons = '';
     
-    const url = window.location.origin + projectRoot + '/api/nutritionist.php?action=getLogged';
+    const url = window.location.origin  + '/api/nutritionist.php?action=getLogged';
 
     try {
         const req = await fetch(url);
@@ -29,8 +29,7 @@ async function checkSession() {
 
 document.getElementById('btnLogout').addEventListener('click', async () => {
     const pathArray = window.location.pathname.split('/');
-    const projectRoot = '/' + pathArray[1];
-    await fetch(window.location.origin + projectRoot + '/api/nutritionist.php?action=logout');
+    await fetch(window.location.origin  + '/api/nutritionist.php?action=logout');
     window.location.href = 'login.html';
 });
 
@@ -41,9 +40,8 @@ async function loadPatients() {
 
     try {
         const pathArray = window.location.pathname.split('/');
-        const projectRoot = '/' + pathArray[1];
-        
-        const url = window.location.origin + projectRoot + '/api/patient.php?action=selectAll';
+            
+        const url = window.location.origin  + '/api/patient.php?action=selectAll';
         
         const req = await fetch(url);
         const res = await req.json();
@@ -70,9 +68,8 @@ async function searchPatients() {
 
     try {
         const pathArray = window.location.pathname.split('/');
-        const projectRoot = '/' + pathArray[1];
-        
-        const url = window.location.origin + projectRoot + '/api/patient.php?action=searchByName';
+            
+        const url = window.location.origin  + '/api/patient.php?action=searchByName';
 
         const req = await fetch(url, {
             method: 'POST',
@@ -144,9 +141,7 @@ async function viewDetails(id) {
         currentPatinetId = id;
         
         const pathArray = window.location.pathname.split('/');
-        const projectRoot = '/' + pathArray[1];
-
-        const urlPatient = window.location.origin + projectRoot + '/api/patient.php?action=select' + `&id=${id}`;
+             const urlPatient = window.location.origin  + '/api/patient.php?action=select' + `&id=${id}`;
         const reqPatient = await fetch(urlPatient);
         const resPatient = await reqPatient.json();
         const user = resPatient.data;
@@ -188,7 +183,7 @@ async function viewDetails(id) {
          const dietListDiv = document.getElementById('dietList');
         dietListDiv.innerHTML = '<p class="loading-text">Buscando dietas...</p>';
 
-        const urlDiets = window.location.origin + projectRoot + '/api/diet.php?action=selectByPatientId&id=' + id;
+        const urlDiets = window.location.origin  + '/api/diet.php?action=selectByPatientId&id=' + id;
         
         const reqDiet = await fetch(urlDiets);
         const resDiet = await reqDiet.json();
