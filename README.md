@@ -17,7 +17,6 @@ Este projeto é a **primeira versão** do sistema NutriVida, construída sem nen
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Como Rodar o Projeto](#-como-rodar-o-projeto)
 - [Variáveis de Ambiente](#-variáveis-de-ambiente)
-- [Estrutura de Pastas](#-estrutura-de-pastas)
 
 ---
 
