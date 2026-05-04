@@ -451,8 +451,10 @@ Acesse a página de login e escolha "Sou Nutricionista" ou "Sou Paciente"
 Clique em "Cadastrar" para criar uma conta
 Faça o login e explore o sistema
 
-Observação: No arquivo `init.sql` está os dados cadastrados de teste. Você pode verificar por lá qual usuário deseja utilizar. 
-Por exemplo --- Login de um páciente: carlos@email.com | senha: 123
+## Observação: No arquivo `init.sql` está o seeds do banco de dados de teste.  
+Para fins de teste, utilize as credenciais:
+* Login de um páciente: `carlos@email.com` | `senha: 123`
+* Login de um nutricionista: `nutriteste@email.com`| `senha: 123`
 
 ## 6. Para derrubar os containers
 ```bash
