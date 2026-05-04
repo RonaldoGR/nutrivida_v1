@@ -8,16 +8,15 @@ Este projeto é a **primeira versão** do sistema NutriVida, construída sem nen
 
 ## Sumário
 
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Arquitetura do Sistema](#-arquitetura-do-sistema)
-- [Módulos](#-módulos)
-  - [Frontend](#-frontend)
-  - [Backend](#-backend)
-  - [API](#-api)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como Rodar o Projeto](#-como-rodar-o-projeto)
-- [Variáveis de Ambiente](#-variáveis-de-ambiente)
-
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Arquitetura do Sistema](#arquitetura-do-sistema)
+- [Módulos](#módulos)
+  - [Frontend](#frontend)
+  - [Backend](#backend)
+  - [API](#api)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Rodar o Projeto](#como-rodar-o-projeto)
+- [Variáveis de Ambiente](#variáveis-de-ambiente)
 ---
 
 ##  Sobre o Projeto
