@@ -453,7 +453,7 @@ Faça o login e explore o sistema
 
 ## Observação: No arquivo `init.sql` está o seeds do banco de dados de teste.  
 Para fins de teste, utilize as credenciais:
-* Login de um páciente: `carlos@email.com` | `senha: 123`
+* Login de um paciente: `carlos@email.com` | `senha: 123`
 * Login de um nutricionista: `nutriteste@email.com`| `senha: 123`
 
 ## 6. Para derrubar os containers
