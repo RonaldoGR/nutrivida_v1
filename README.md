@@ -523,4 +523,4 @@ Facilitar testes e manutenção de código.
 
 
 
-Desenvolvido por Ronaldo Gandra Rocha — IFSUL, 3º Semestre de Curso Superior de Tecnologia Sistemas para Internet.
+Desenvolvido por Ronaldo Gandra Rocha — IFSUL, 3º Semestre de Curso Superior de Tecnologia em Sistemas para Internet.
